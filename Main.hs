@@ -56,7 +56,7 @@ main = do
 	    get "/menus/:id" $ do
 	      id <- param "id"
 	      allMenus <- liftIO (getAllMenus conn)
-	      json (filter (matchesId id) allMenus)
+	      json (filter (matchesID id) allMenus)
 	      
 	    post "/menus" $ do
 	      menu <- (jsonData :: ActionM Menu)
