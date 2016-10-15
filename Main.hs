@@ -36,7 +36,7 @@ instance ToRow Menu where
 
 getAllMenus ::Connection -> IO [Menu]
 getAllMenus c = do
-	list <- (query_c "select * from menu" :: IO [Menu])
+	list <- (query_ c "select * from menu" :: IO [Menu])
 	return list
 
 main = do
